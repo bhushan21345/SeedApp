@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamagon.SeedApp.iOS", "Xama
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamagon.SeedApp.Droid", "Xamagon.SeedApp.Droid\Xamagon.SeedApp.Droid.csproj", "{61DB6E2E-78CC-4BC9-8826-108C5605BE0B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4CA1E628-E571-47C8-AD6D-F51C3FB4AC5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Droid", "Droid", "{E2F938A8-CBC6-4BFA-88B3-2F6AF79709DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{4C2F0193-D4C1-4F6A-8C30-2D826C8D8E6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -108,5 +114,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11F503E1-EF7B-4967-AD60-C9DA04BF78AB} = {4CA1E628-E571-47C8-AD6D-F51C3FB4AC5F}
+		{E1030603-A7B0-4168-A94E-12D19F172C08} = {4C2F0193-D4C1-4F6A-8C30-2D826C8D8E6A}
+		{61DB6E2E-78CC-4BC9-8826-108C5605BE0B} = {E2F938A8-CBC6-4BFA-88B3-2F6AF79709DF}
 	EndGlobalSection
 EndGlobal
