@@ -1,11 +1,11 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamagon.SeedApp.Common;
 
 namespace Xamagon.SeedApp.Droid
 {
@@ -17,7 +17,16 @@ namespace Xamagon.SeedApp.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            WireupDependencies ();
             LoadApplication(new App());
+        }
+
+        private static void WireupDependencies ()
+        {
+            ContainerManager.InitializeDependencyRegistrar ();
+            Data.Bootstrapper.Initialize (ContainerManager.DependencyRegistrar);
+            SeedApp.Bootstrapper.Initialize (ContainerManager.DependencyRegistrar);
+            Bootstrapper.Initialize (ContainerManager.DependencyRegistrar);
         }
     }
 }

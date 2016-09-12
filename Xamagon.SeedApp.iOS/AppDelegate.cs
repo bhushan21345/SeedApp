@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
+using Xamagon.SeedApp.Common;
 
 namespace Xamagon.SeedApp.iOS
 {
@@ -25,7 +22,17 @@ namespace Xamagon.SeedApp.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            WireupDependencies ();
+
             return base.FinishedLaunching(app, options);
+        }
+
+        private static void WireupDependencies ()
+        {
+            ContainerManager.InitializeDependencyRegistrar ();
+            Data.Bootstrapper.Initialize (ContainerManager.DependencyRegistrar);
+            SeedApp.Bootstrapper.Initialize (ContainerManager.DependencyRegistrar);
+            Bootstrapper.Initialize (ContainerManager.DependencyRegistrar);
         }
     }
 }
