@@ -172,6 +172,10 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Xamagon.SeedApp.Common\Xamagon.SeedApp.Common.csproj">
+      <Project>{c82a848a-43fd-4e1f-8c11-3d3ddd68d99c}</Project>
+      <Name>Xamagon.SeedApp.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Xamagon.SeedApp\Xamagon.SeedApp.csproj">
       <Project>{11F503E1-EF7B-4967-AD60-C9DA04BF78AB}</Project>
       <Name>Xamagon.SeedApp</Name>

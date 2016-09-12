@@ -104,6 +104,16 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamagon.SeedApp.Common\Xamagon.SeedApp.Common.csproj">
+      <Project>{c82a848a-43fd-4e1f-8c11-3d3ddd68d99c}</Project>
+      <Name>Xamagon.SeedApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamagon.SeedApp.Data\Xamagon.SeedApp.Data.csproj">
+      <Project>{dd303cd4-ad89-43c8-8f1b-010347267815}</Project>
+      <Name>Xamagon.SeedApp.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
