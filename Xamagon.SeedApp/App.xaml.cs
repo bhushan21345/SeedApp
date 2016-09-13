@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using Xamagon.SeedApp.Common;
 using Xamarin.Forms;
 
 namespace Xamagon.SeedApp
 {
     public partial class App : Application
     {
-        public App()
+        private readonly INavigationService _navigationService;
+
+        public App(INavigationService navigationService)
         {
             InitializeComponent();
+            _navigationService = navigationService;
 
-            MainPage = new Xamagon.SeedApp.MainPage();
+            _navigationService.LoginStatusChanged ();
+
+            //MainPage = new Xamagon.SeedApp.MainPage();
         }
 
         protected override void OnStart()

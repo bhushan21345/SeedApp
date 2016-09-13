@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using Autofac;
+using Foundation;
 using UIKit;
 using Xamagon.SeedApp.Common;
 
@@ -20,9 +21,11 @@ namespace Xamagon.SeedApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
 
             WireupDependencies ();
+
+            var application = ContainerManager.Container.Resolve<App> ();
+            LoadApplication (application);
 
             return base.FinishedLaunching(app, options);
         }

@@ -1,11 +1,8 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Xamagon.SeedApp.Common;
+using Autofac;
 
 namespace Xamagon.SeedApp.Droid
 {
@@ -18,7 +15,10 @@ namespace Xamagon.SeedApp.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             WireupDependencies ();
-            LoadApplication(new App());
+
+            var application = ContainerManager.Container.Resolve<App> ();
+            LoadApplication (application);
+            //LoadApplication(new App());
         }
 
         private static void WireupDependencies ()

@@ -1,5 +1,7 @@
 ﻿using System;
 using Autofac;
+using Xamagon.SeedApp.Common;
+using Xamagon.SeedApp.iOS.Providers;
 
 namespace Xamagon.SeedApp.iOS
 {
@@ -7,11 +9,12 @@ namespace Xamagon.SeedApp.iOS
     {
         public static void Initialize (ContainerBuilder builder)
         {
-            RegisterTypes (builder);
+            RegisterProviders (builder);
         }
 
-        private static void RegisterTypes (ContainerBuilder containerBuilder)
+        private static void RegisterProviders (ContainerBuilder containerBuilder)
         {
+            containerBuilder.RegisterType<SecureStorageProvider> ().As<ISecureStorageProvider> ();
         }
     }
 }
