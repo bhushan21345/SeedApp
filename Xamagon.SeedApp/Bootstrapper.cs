@@ -1,7 +1,9 @@
 ﻿using System;
 using Autofac;
 using Xamagon.SeedApp.Common;
+using Xamagon.SeedApp.Common.Interfaces;
 using Xamagon.SeedApp.Services;
+using Xamagon.SeedApp.ViewModels;
 
 namespace Xamagon.SeedApp
 {
@@ -17,6 +19,7 @@ namespace Xamagon.SeedApp
         private static void RegisterServices (ContainerBuilder containerBuilder)
         {
             containerBuilder.RegisterType<NavigationService> ().As<INavigationService> ();
+            containerBuilder.RegisterType<DialogService> ().As<IDialogService> ();
         }
 
         private static void RegisterPages (ContainerBuilder containerBuilder)

@@ -1,11 +1,11 @@
 ﻿using System;
-namespace Xamagon.SeedApp
+
+namespace Xamagon.SeedApp.ViewModels
 {
-    public class LoginPageViewModel
+    public class LoginPageViewModel : BaseViewModel
     {
         public LoginPageViewModel ()
         {
         }
     }
 }
-
