@@ -1,6 +1,6 @@
-﻿using System;
-using Autofac;
-using Xamagon.SeedApp.Common;
+﻿using Autofac;
+using Xamagon.SeedApp.Common.Logging;
+using Xamagon.SeedApp.Common.Security;
 using Xamagon.SeedApp.iOS.Providers;
 
 namespace Xamagon.SeedApp.iOS
@@ -14,7 +14,8 @@ namespace Xamagon.SeedApp.iOS
 
         private static void RegisterProviders (ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterType<SecureStorageProvider> ().As<ISecureStorageProvider> ();
+            containerBuilder.RegisterType<SecureLocalStorageProvider> ().As<ISecureLocalStorageProvider> ();
+            containerBuilder.RegisterType<StackFrameProvider>().As<IStackFrameProvider>();
         }
     }
 }

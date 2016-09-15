@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Xamagon.SeedApp.Common
+﻿namespace Xamagon.SeedApp.Common.Security
 {
-    public interface ISecureStorageProvider
+    public interface ISecureLocalStorageProvider
     {
         string GetValue (string key);
 

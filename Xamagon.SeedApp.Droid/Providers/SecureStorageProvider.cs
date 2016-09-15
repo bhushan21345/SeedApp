@@ -1,10 +1,10 @@
 ﻿using System.Text;
-using Xamagon.SeedApp.Common;
+using Xamagon.SeedApp.Common.Security;
 using XLabs.Platform.Services;
 
 namespace Xamagon.SeedApp.Droid.Providers
 {
-    public class SecureStorageProvider : ISecureStorageProvider
+    public class SecureStorageProvider : ISecureLocalStorageProvider
     {
         private readonly ISecureStorage _secureStorage;
 
