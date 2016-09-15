@@ -1,20 +1,10 @@
-﻿using System;
-using Realms;
-using Xamagon.SeedApp.Common.Utilities;
+﻿using SQLite;
 
 namespace Xamagon.SeedApp.Data.Entities
 {
-    public class LogEntry : RealmObject
+    [Table("LogEntry")]
+    public class LogEntry : EntityBase
     {
-        public LogEntry()
-        {
-            LogKey = RandomTextGenerator.GenerateRandomString(12);
-        }
-
-        public string LogKey { get; set; }
-
-        public DateTimeOffset CreatedOn { get; set; } = DateTime.UtcNow;
-
         public string Message { get; set; }
 
         public string Level { get; set; }

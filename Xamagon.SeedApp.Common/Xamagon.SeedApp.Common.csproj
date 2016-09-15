@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ContainerManager.cs" />
+    <Compile Include="Data\IDataConfigProvider.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\ILoggingProvider.cs" />
     <Compile Include="Logging\IStackFrameProvider.cs" />
