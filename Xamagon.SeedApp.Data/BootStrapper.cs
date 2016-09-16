@@ -1,7 +1,12 @@
 ﻿using System;
 using Autofac;
+using SQLite;
 using Xamagon.SeedApp.Common.Logging;
+using Xamagon.SeedApp.Common.Utilities;
+using Xamagon.SeedApp.Data.Entities;
+using Xamagon.SeedApp.Data.Interfaces;
 using Xamagon.SeedApp.Data.Logging;
+using Xamagon.SeedApp.Data.Managers;
 
 namespace Xamagon.SeedApp.Data
 {
@@ -9,17 +14,23 @@ namespace Xamagon.SeedApp.Data
     {
         public static void Initialize (ContainerBuilder builder)
         {
-            RegisterLoggingProviders(builder);
-            RegisterTypes (builder);
+            RegisterLoggingProviders (builder);
+            RegisterManagers (builder);
+            RegisterProviders (builder);
         }
 
-        private static void RegisterLoggingProviders(ContainerBuilder builder)
+        private static void RegisterLoggingProviders (ContainerBuilder containerBuilder)
         {
-            builder.RegisterType<ILoggingProvider>().As<LocalDbLoggingProvider>();
-            builder.RegisterType<ILogger>().As<Logger>();
+            containerBuilder.RegisterType<LocalDbLoggingProvider> ().As<ILoggingProvider> ();
+            containerBuilder.RegisterType<Logger> ().As<ILogger> ();
         }
 
-        private static void RegisterTypes (ContainerBuilder containerBuilder)
+        private static void RegisterManagers (ContainerBuilder containerBuilder)
+        {
+            containerBuilder.RegisterType<SecurityManager> ().As<ISecurityManager> ();
+        }
+
+        private static void RegisterProviders (ContainerBuilder containerBuilder)
         {
         }
     }

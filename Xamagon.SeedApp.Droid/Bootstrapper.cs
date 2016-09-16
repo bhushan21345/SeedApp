@@ -1,7 +1,7 @@
 ﻿using System;
 using Autofac;
-using Xamagon.SeedApp.Common;
 using Xamagon.SeedApp.Common.Logging;
+using Xamagon.SeedApp.Common.Security;
 using Xamagon.SeedApp.Droid.Providers;
 
 namespace Xamagon.SeedApp.Droid
@@ -15,7 +15,7 @@ namespace Xamagon.SeedApp.Droid
 
         private static void RegisterProviders (ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterType<SecureStorageProvider> ().As<ISecureStorageProvider> ();
+            containerBuilder.RegisterType<SecureStorageProvider> ().As<ISecureLocalStorageProvider> ();
             containerBuilder.RegisterType<StackFrameProvider>().As<IStackFrameProvider>();
         }
     }
